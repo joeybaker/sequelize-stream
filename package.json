@@ -1,0 +1,70 @@
+{
+  "name": "seqeulize-stream",
+  "version": "0.0.0",
+  "description": "Create a stream of Sequelize create, update, and destroy events.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ava --tap=${CI-false} | $(if [ -z ${CI:-} ]; then echo 'tail'; else tap-xunit > $CIRCLE_TEST_REPORTS/ava/ava.xml; fi;)",
+    "tdd": "ava --watch",
+    "watch": "SCRIPTY_SILENT=true scripty",
+    "build": "SCRIPTY_SILENT=true scripty",
+    "doctoc": "scripty",
+    "prepublish": "npm run -s build"
+  },
+  "keywords": [
+    "sequelize",
+    "postgres",
+    "sqlite",
+    "mysql",
+    "events",
+    "real-time",
+    "CRUD"
+  ],
+  "author": "Joey Baker <joey@byjoeybaker.com> (https://byjoeybaker.com)",
+  "license": "Artistic-2.0",
+  "dependencies": {},
+  "peerDependencies": {
+    "sequelize": ">=3"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-latest": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "babel-watch": "^2.0.2",
+    "doctoc": "^1.2.0",
+    "eslint": "^3.6.0",
+    "eslint-plugin-filenames": "^1.1.0",
+    "eslint-plugin-lean-imports": "^0.3.3",
+    "scripty": "^1.6.0",
+    "sequelize": "^3.24.3",
+    "sqlite3": "^3.1.4",
+    "tap-xunit": "^1.4.0"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-object-rest-spread"
+    ],
+    "sourceMaps": "inline"
+  },
+  "ava": {
+    "source": [
+      "!dist/**",
+      "**/*.js"
+    ],
+    "files": [
+      "**/*.test.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
+}
