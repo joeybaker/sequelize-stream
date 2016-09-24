@@ -1,1 +1,7 @@
 src
+
+
+.DS_Store
+.eslintrc
+.git*
+.npmignore
