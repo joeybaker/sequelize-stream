@@ -103,8 +103,8 @@ Artistic 2.0 © [Joey Baker](https://byjoeybaker.com) and contributors. A copy o
 
 [npm-url]: https://npmjs.org/package/sequelize-stream
 [npm-image]: https://badge.fury.io/js/sequelize-stream.svg
-[circleci-url]: https://circle-ci.org/joeybaker/sequelize-stream
-[circleci-image]: https://circle-ci.org/joeybaker/sequelize-stream.svg?branch=master
+[circleci-url]: https://circleci.com/gh/joeybaker/sequelize-stream
+[circleci-image]: https://circleci.com/gh/joeybaker/sequelize-stream/tree/master.svg?style=svg
 [daviddm-url]: https://david-dm.org/joeybaker/sequelize-stream.svg?theme=shields.io
 [daviddm-image]: https://david-dm.org/joeybaker/sequelize-stream
 
