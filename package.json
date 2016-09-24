@@ -1,6 +1,6 @@
 {
   "name": "seqeulize-stream",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Create a stream of Sequelize create, update, and destroy events.",
   "main": "dist/index.js",
   "scripts": {
