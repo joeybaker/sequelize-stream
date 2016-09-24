@@ -99,7 +99,7 @@ _NOTE: you might need to `sudo ln -s /usr/local/bin/node /usr/bin/node` to ensur
 Artistic 2.0 © [Joey Baker](https://byjoeybaker.com) and contributors. A copy of the license can be found in the file `LICENSE`.
 
 
-[npm-url]: https://npmjs.org/package/sequelize-stream
+[npm-url]: https://www.npmjs.com/package/seqeulize-stream
 [npm-image]: https://badge.fury.io/js/sequelize-stream.svg
 [circleci-url]: https://circleci.com/gh/joeybaker/sequelize-stream
 [circleci-image]: https://circleci.com/gh/joeybaker/sequelize-stream/tree/master.svg?style=svg
