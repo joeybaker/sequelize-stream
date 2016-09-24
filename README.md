@@ -1,4 +1,4 @@
-# sequelize-stream[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-url]][daviddm-image] [![Build Status][circleci-image]][circleci-url]
+# sequelize-stream [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-url]][daviddm-image] [![Build Status][circleci-image]][circleci-url]
 
 Create a stream of [Sequelize](http://sequelizejs.com) create, update, and destroy events. This is useful if you want to build a real-time stream of events in your database.
 
