@@ -4,21 +4,19 @@ Create a stream of [Sequelize](http://sequelizejs.com) create, update, and destr
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+## Contents
 
 - [Install](#install)
 - [Usage](#usage)
 - [Methods](#methods)
-  - [sequelizeStream `(<Sequelize instance> sequelize)` => `<stream.Readable instance>`](#sequelizestream-sequelize-instance-sequelize--streamreadable-instance)
 - [Events](#events)
-  - [data `(<Object> {<String> event, <Sequelize instance> instance})`](#data-object-string-event-sequelize-instance-instance)
 - [Note About Bulk Destroy](#note-about-bulk-destroy)
 - [Tests](#tests)
 - [Developing](#developing)
-  - [Requirements](#requirements)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## Install
 

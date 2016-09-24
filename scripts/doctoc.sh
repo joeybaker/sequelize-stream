@@ -10,7 +10,11 @@ function commit_changes () {
   fi
 }
 
-if [ -f README.md ]; then doctoc README.md; fi
-if [ -f CONTRIBUTING.md ]; then doctoc CONTRIBUTING.md; fi
+if [ -f README.md ]; then
+  doctoc --maxlevel 2 --title '## Contents' README.md
+fi
+if [ -f CONTRIBUTING.md ]; then
+  doctoc --maxlevel 2 --title '## Contents' CONTRIBUTING.md
+fi
 commit_changes
 

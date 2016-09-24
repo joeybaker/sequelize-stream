@@ -8,7 +8,7 @@
     "tdd": "ava --watch",
     "watch": "SCRIPTY_SILENT=true scripty",
     "build": "SCRIPTY_SILENT=true scripty",
-    "doctoc": "scripty",
+    "doctoc": "SCRIPTY_SILENT=true scripty",
     "prepublish": "npm run -s build"
   },
   "keywords": [
