@@ -10,6 +10,8 @@
     "build": "SCRIPTY_SILENT=true scripty",
     "doctoc": "SCRIPTY_SILENT=true scripty",
     "dmn": "SCRIPTY_SILENT=true scripty",
+    "release": "SCRIPTY_SILENT=true scripty",
+    "lint": "eslint src $@",
     "prepublish": "npm run -s build"
   },
   "keywords": [
@@ -23,6 +25,9 @@
   ],
   "author": "Joey Baker <joey@byjoeybaker.com> (https://byjoeybaker.com)",
   "license": "Artistic-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {},
   "peerDependencies": {
     "sequelize": ">=3"
