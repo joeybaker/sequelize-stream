@@ -5,3 +5,6 @@ src
 .eslintrc
 .git*
 .npmignore
+
+
+CHANGELOG.*
