@@ -70,7 +70,7 @@ The stream will emit objects with keys of `event` and `instance`.
 
 ```js
 const onData = ({event, instance} => {
-  console.log(`${instance.$modelOptions.name.singluar} had a ${event} event`)
+  console.log(`${instance.$modelOptions.name.singular} had a ${event} event`)
   // might log something like 'cat had a create event'
 })
 ```
