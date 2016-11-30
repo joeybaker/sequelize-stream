@@ -84,8 +84,12 @@ const onData = ({event, instance} => {
 ```
 
 
-## Note About Bulk Destroy
-`Model.destroy({where})` doesn't work because there's no good way to get affected instances and be sure they were actually deleted. Regular destroy does work though (`instance.destroy()`).
+## Caveats
+### Bulk Destroy
+`Model.destroy({where})` doesn't work because there's no good way to get affected instances and be sure they were actually deleted. Regular destroy does work though (`instance.destroy()`). You should use `Model.destroy({where, individualHooks: true})` if you want stream events on the bulk method.
+
+### Bulk Update
+`Model.update({where})` works, but `instance.previous()` and `instance.changed()` will note return anything because there's no good way to get affected instances from Sequelize. Instead, you receive new instances which are ignorant of changes. Regular update does work though (`instance.update()`). You should use `Model.update({where, individualHooks: true})` if you want stream events on the bulk method.
 
 ## Tests
 Tests are in [AVA](https://github.com/avajs/ava).
