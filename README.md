@@ -30,7 +30,7 @@ npm i -S sequelize-stream
 ```js
 // setup sequelize
 import Sequelize from 'sequelize'
-const sequelize = new Seqeulize({ dialect: 'sqlite' })
+const sequelize = new Sequelize({ dialect: 'sqlite' })
 const Cat = sequelize.define('cat', {
   name: Sequelize.STRING
   , spots: Sequelize.INTEGER
@@ -44,17 +44,25 @@ const stream = sequelizeStream(sequelize)
 // when the stream receives data, log
 stream.on('data', ({instance, event}) => console.log(event, instance.toJSON()))
 
+
 // examples
 Cat.bulkCreate([{name: 'fluffy'}, {name: 'spot'}])
 // => 'create', {name: 'fluffy', id: 1}
 // => 'create', {name: 'spot', id: 2}
-const sparky = Cat.create({name: 'sparky'})
+
+Cat.create({name: 'sparky'})
 // => 'create', {name: 'sparky', id: 3}
-sparky.update({spots: 2})
+.then((sparky) => {
+  return sparky.update({spots: 2})
+})
 // => 'update', {name: 'sparky', spots: 2, id: 3}
-Cat.update({spots: 1}, {where: {name: 'sparky'}})
+.tap((sparky) => {
+  return Cat.update({spots: 1}, {where: {name: 'sparky'}})
+})
 // => 'update', {name: 'sparky', spots: 1, id: 3}
-sparky.destroy()
+.then((sparky) => {
+  sparky.destroy()
+})
 // => 'destroy', {name: 'sparky', spots: 1, id: 3}
 
 // NOTE: bulk destroy doesn't work due to Sequelize limitations.
