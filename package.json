@@ -23,6 +23,10 @@
     "real-time",
     "CRUD"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeybaker/sequelize-stream.git"
+  },
   "author": "Joey Baker <joey@byjoeybaker.com> (https://byjoeybaker.com)",
   "license": "Artistic-2.0",
   "publishConfig": {
