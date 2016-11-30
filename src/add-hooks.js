@@ -3,6 +3,9 @@ const EVENTS = {
   CREATE: 'create'
   , UPDATE: 'update'
   , DESTROY: 'destroy'
+  // unsupported, just here so we can provide a test case and be alerted if
+  // sequelize fixes this in the future.
+  , BULK_DESTROY: 'bulk destroy'
 }
 
 export default ({sequelize, stream}) => {
@@ -33,5 +36,11 @@ export default ({sequelize, stream}) => {
 
   sequelize.addHook('afterDestroy', `${PREFIX}-afterDestroy`, (instance) => {
     stream.push({event: EVENTS.DESTROY, instance})
+  })
+
+  // sequelize doesn't pass the instances to us, so all we can do is emit a
+  // destroy event
+  sequelize.addHook('afterBulkDestroy', `${PREFIX}-afterBulkDestroy`, () => {
+    stream.push({event: EVENTS.BULK_DESTROY})
   })
 }

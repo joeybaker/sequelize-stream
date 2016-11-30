@@ -5,7 +5,8 @@ IFS=$'\n\t'
 
 function commit_changes () {
   if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != '' ]]; then
-    git add README.md CONTRIBUTING.md && \
+    ( test -f README.md && git add README.md ) || \
+    ( test -f CONTRIBUTING.md && git add CONTRIBUTING.md ) && \
     git commit --no-verify -m'Docs table of contents update'
   fi
 }

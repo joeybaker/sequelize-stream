@@ -10,7 +10,7 @@ Create a stream of [Sequelize](http://sequelizejs.com) create, update, and destr
 - [Usage](#usage)
 - [Methods](#methods)
 - [Events](#events)
-- [Note About Bulk Destroy](#note-about-bulk-destroy)
+- [Caveats](#caveats)
 - [Tests](#tests)
 - [Developing](#developing)
 - [License](#license)
@@ -30,7 +30,7 @@ npm i -S sequelize-stream
 ```js
 // setup sequelize
 import Sequelize from 'sequelize'
-const sequelize = new Seqeulize({ dialect: 'sqlite' })
+const sequelize = new Sequelize({ dialect: 'sqlite' })
 const Cat = sequelize.define('cat', {
   name: Sequelize.STRING
   , spots: Sequelize.INTEGER
@@ -44,17 +44,25 @@ const stream = sequelizeStream(sequelize)
 // when the stream receives data, log
 stream.on('data', ({instance, event}) => console.log(event, instance.toJSON()))
 
+
 // examples
 Cat.bulkCreate([{name: 'fluffy'}, {name: 'spot'}])
 // => 'create', {name: 'fluffy', id: 1}
 // => 'create', {name: 'spot', id: 2}
-const sparky = Cat.create({name: 'sparky'})
+
+Cat.create({name: 'sparky'})
 // => 'create', {name: 'sparky', id: 3}
-sparky.update({spots: 2})
+.then((sparky) => {
+  return sparky.update({spots: 2})
+})
 // => 'update', {name: 'sparky', spots: 2, id: 3}
-Cat.update({spots: 1}, {where: {name: 'sparky'}})
+.tap((sparky) => {
+  return Cat.update({spots: 1}, {where: {name: 'sparky'}})
+})
 // => 'update', {name: 'sparky', spots: 1, id: 3}
-sparky.destroy()
+.then((sparky) => {
+  sparky.destroy()
+})
 // => 'destroy', {name: 'sparky', spots: 1, id: 3}
 
 // NOTE: bulk destroy doesn't work due to Sequelize limitations.
@@ -76,8 +84,12 @@ const onData = ({event, instance} => {
 ```
 
 
-## Note About Bulk Destroy
-`Model.destroy({where})` doesn't work because there's no good way to get affected instances and be sure they were actually deleted. Regular destroy does work though (`instance.destroy()`).
+## Caveats
+### Bulk Destroy
+`Model.destroy({where})` doesn't work because there's no good way to get affected instances and be sure they were actually deleted. Regular destroy does work though (`instance.destroy()`). You should use `Model.destroy({where, individualHooks: true})` if you want stream events on the bulk method.
+
+### Bulk Update
+`Model.update({where})` works, but `instance.previous()` and `instance.changed()` will note return anything because there's no good way to get affected instances from Sequelize. Instead, you receive new instances which are ignorant of changes. Regular update does work though (`instance.update()`). You should use `Model.update({where, individualHooks: true})` if you want stream events on the bulk method.
 
 ## Tests
 Tests are in [AVA](https://github.com/avajs/ava).

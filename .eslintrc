@@ -1,7 +1,11 @@
 {
   "plugins": [
     "lean-imports",
-    "filenames"
+    "filenames",
+    "ava"
+  ],
+  "extends": [
+    "plugin:ava/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -12,7 +16,6 @@
     "sourceType": "module"
   },
   "env": {
-    "browser": true,
     "node": true,
     "es6": true
   },
@@ -307,6 +310,7 @@
     "filenames/match-regex": [
       2,
       "^[a-z-\\.]+$"
-    ]
+    ],
+    "ava/prefer-async-await": 0
   }
 }
