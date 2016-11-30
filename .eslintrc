@@ -310,6 +310,7 @@
     "filenames/match-regex": [
       2,
       "^[a-z-\\.]+$"
-    ]
+    ],
+    "ava/prefer-async-await": 0
   }
 }
