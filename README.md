@@ -10,7 +10,7 @@ Create a stream of [Sequelize](http://sequelizejs.com) create, update, and destr
 - [Usage](#usage)
 - [Methods](#methods)
 - [Events](#events)
-- [Note About Bulk Destroy](#note-about-bulk-destroy)
+- [Caveats](#caveats)
 - [Tests](#tests)
 - [Developing](#developing)
 - [License](#license)
