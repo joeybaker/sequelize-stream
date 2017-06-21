@@ -34,7 +34,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "sequelize": ">=4.0.0"
+    "sequelize": ">=4.2.0"
   },
   "devDependencies": {
     "ava": "^0.19.0",
