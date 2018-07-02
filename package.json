@@ -40,7 +40,7 @@
     "ava": "^0.24.0",
     "babel-cli": "^6.18.0",
     "babel-eslint": "^8.0.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-add-module-exports": "^0.3.1",
     "babel-plugin-transform-object-rest-spread": "^6.19.0",
     "babel-preset-latest": "^6.16.0",
     "babel-register": "^6.18.0",
