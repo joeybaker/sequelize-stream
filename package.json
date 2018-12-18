@@ -51,7 +51,7 @@
     "eslint-plugin-ava": "^4.0.0",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-lean-imports": "^0.3.3",
-    "scripty": "^1.6.0",
+    "scripty": "^1.9.0",
     "sequelize": "^4.2.1",
     "sqlite3": "^4.0.0",
     "tap-xunit": "^2.0.0"
