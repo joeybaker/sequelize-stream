@@ -45,7 +45,7 @@
     "babel-preset-latest": "^6.16.0",
     "babel-register": "^6.18.0",
     "babel-watch": "^2.0.3",
-    "dmn": "^1.0.10",
+    "dmn": "^2.2.1",
     "doctoc": "^1.2.0",
     "eslint": "^5.0.0",
     "eslint-plugin-ava": "^4.0.0",
