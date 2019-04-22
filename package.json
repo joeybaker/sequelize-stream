@@ -52,7 +52,7 @@
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-lean-imports": "^0.3.3",
     "scripty": "^1.6.0",
-    "sequelize": "^5.1.0",
+    "sequelize": "^5.7.2",
     "sqlite3": "^4.0.0",
     "tap-xunit": "^2.0.0"
   },
