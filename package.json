@@ -48,7 +48,7 @@
     "dmn": "^1.0.10",
     "doctoc": "^1.2.0",
     "eslint": "^5.0.0",
-    "eslint-plugin-ava": "^4.0.0",
+    "eslint-plugin-ava": "^7.0.0",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-lean-imports": "^0.3.3",
     "scripty": "^1.6.0",
