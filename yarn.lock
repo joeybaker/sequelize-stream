@@ -4920,10 +4920,10 @@ tap-parser@~1.2.2:
   optionalDependencies:
     readable-stream "^2"
 
-tap-xunit@^2.0.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/tap-xunit/-/tap-xunit-2.3.0.tgz#9a259e2f1f87908f1fe42b3f4330bf83cd217640"
-  integrity sha512-YVsURNvn1wfVUWb5wjansxhfbfeo2hOBTUbVgZoaMO8lyZzpiSi9IiZTZ7JG56m6A49LeWjfJIx/SnAre41V/A==
+tap-xunit@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tap-xunit/-/tap-xunit-2.4.0.tgz#268a4f54920a604a91dc5a1d0a1a0ce075f8b4f4"
+  integrity sha512-ButAA01aOdHZm1PX6CjcyL+5q3SljFtOnvnatwoh3rv5gcWL9uajBDNF5tk8IZuVnddblI/6Ghc3RauSY/865Q==
   dependencies:
     duplexer "~0.1.1"
     minimist "~1.2.0"
