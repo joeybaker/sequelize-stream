@@ -53,7 +53,7 @@
     "eslint-plugin-lean-imports": "^0.3.3",
     "scripty": "^1.6.0",
     "sequelize": "^5.1.0",
-    "sqlite3": "^4.0.0",
+    "sqlite3": "^4.0.9",
     "tap-xunit": "^2.0.0"
   },
   "babel": {
